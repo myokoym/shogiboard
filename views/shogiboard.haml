@@ -10,7 +10,11 @@
             :src  => "http://www.google.com/jsapi"}
     %script{:type => "text/javascript"} google.load("jquery", "1.4.2");
     %script{:type => "text/javascript",
+            :src  => "./js/jQueryRotate.js"}
+    %script{:type => "text/javascript",
             :src  => "./js/shogiboard.js"}
+    %script{:type => "text/css",
+            :src  => "./css/shogiboard.css"}
   %body
     %h1 インターネット将棋盤
     - fu = "./img/fu.gif"
@@ -38,11 +42,24 @@
                     [nil,kaku,nil,nil,nil,nil,nil,hi,nil],
                     [kyo,kei,gin,kin,gyoku,kin,gin,kei,kyo]]
     %table{:border => '1'}
-      - koma_place.each do |line|
+      - koma_place.each_with_index do |line, i|
         %tr
-        - line.each do |koma|
-          %td
-            - if koma
-              %img{:src => koma}
-    %p#bottom ここに色が付けばエラーはない
+          - line.each do |koma|
+            %td
+              - if koma
+                - if i < 5
+                  %img.you{:src => koma}
+                - else
+                  %img.me{:src => koma}
+    %table{:border => '1'}
+      - koma_place.each_with_index do |line, i|
+        %tr
+          - line.each do |koma|
+            %td
+              - if koma
+                - if i < 5
+                  %p#you koma
+                - else
+                  %p#me koma
+    %p#bottom ここに色が付けばjQueryのエラーなんてないんだからね！
 

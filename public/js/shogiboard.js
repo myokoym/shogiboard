@@ -7,9 +7,10 @@ $(function(){
     $before = $(this);
   });
   $("td").mouseup(function(){
-    $after = $(this).html();
-    $(this).html($before.html());
-    $before.html($after);
+    $after = $(this);
+    $(this).replaceWith($before);
+    $before.replaceWith($after);
   });
+  $(".you").rotate(180);
 });
 
