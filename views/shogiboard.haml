@@ -5,7 +5,7 @@
     %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
     %meta{'http-equiv' => 'content-style-type', :content => 'text/css'}
     %meta{'http-equiv' => 'content-script-type', :content => 'text/javascript'}
-    %title インターネット将棋盤
+    %title インターネット将棋盤 -the Shogi board on web-
     %script{:type => "text/javascript",
             :src  => "http://www.google.com/jsapi"}
     %script{:type => "text/javascript"} google.load("jquery", "1.4.2");
@@ -16,8 +16,7 @@
           :href  => "./css/shogiboard.css"}
   %body
     %h1 インターネット将棋盤
-    %p -the Shogi board on web-
-    %p ver.0.0.9
+    %p.italic -the Shogi board on web-　　ver.0.0.9
     - fu = "./img/fu.gif"
     - kyo = "./img/kyo.gif"
     - kei = "./img/kei.gif"
@@ -71,5 +70,5 @@
     %div#flag.hidden false
     %div#coordinate.hidden 00
     %div#before.hidden before
-    %p#bottom_marker ここに色が付けばjQueryのエラーなんてないんだからね！
-
+    %p#bottom_marker ここに色が付けばJavaScriptはちゃんと動いてるんだからね！
+ 

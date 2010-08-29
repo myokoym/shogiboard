@@ -4,8 +4,11 @@ $(function(){
       $("#coordinate").html($(this).attr("id"));
       $("#before").text($(this).html());
       $("#flag").text("true");
+      $(this).css("background-color", "red");
     }else{
-      $("#"+$("#coordinate").text()).html($(this).html())
+      $before = $("#"+$("#coordinate").text())
+      $before.html($(this).html())
+      $before.css("background-color", "");
       $(this).html($("#before").text());
       $("#flag").text("false");
     }

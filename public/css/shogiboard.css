@@ -2,7 +2,16 @@ td {
   width: 40px;
   height: 40px;  
 }
+.italic {
+  font-style: italic;
+}
 .hidden {
   display: none;
 }
+/*
+.footer {
+  background-color: gray;
+  color: white;
+}
+*/
 
