@@ -11,8 +11,9 @@
     %script{:type => "text/javascript"} google.load("jquery", "1.4.2");
     %script{:type => "text/javascript",
             :src  => "./js/shogiboard.js"}
-    %script{:type => "text/css",
-            :src  => "./css/shogiboard.css"}
+    %link{:rel => "stylesheet", 
+          :type => "text/css",
+          :href  => "./css/shogiboard.css"}
   %body
     %h1 インターネット将棋盤
     - fu = "./img/fu.gif"
@@ -64,15 +65,5 @@
                   %img.you{:src => koma}
                 - else
                   %img.me{:src => koma}
-    %table{:border => '1'}
-      - koma_place.each_with_index do |line, i|
-        %tr
-          - line.each do |koma|
-            %td
-              - if koma
-                - if i < 5
-                  %p#you koma
-                - else
-                  %p#me koma
     %p#bottom ここに色が付けばjQueryのエラーなんてないんだからね！
 
