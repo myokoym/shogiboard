@@ -2,9 +2,11 @@ $(function(){
   $("td").click(function(){
     if($("#flag").text()=="false"){
       $("#coordinate").html($(this).attr("id"));
-      $("#before").text($(this).html());
-      $("#flag").text("true");
-      $(this).css("background-color", "red");
+      if($(this).html().match("<img.*>")){
+        $("#before").text($(this).html());
+        $("#flag").text("true");
+        $(this).css("background-color", "red");
+      }
     }else{
       $before = $("#"+$("#coordinate").text())
       $before.html($(this).html())

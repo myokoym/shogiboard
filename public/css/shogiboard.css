@@ -1,12 +1,12 @@
 td {
   width: 40px;
-  height: 40px;  
+  height: 44px;  
 }
 .italic {
   font-style: italic;
 }
 .hidden {
-  display: none;
+  display: ;
 }
 /*
 .footer {
