@@ -11,6 +11,5 @@ $(function(){
     $(this).replaceWith($before);
     $before.replaceWith($after);
   });
-  $(".you").rotate(180);
 });
 
