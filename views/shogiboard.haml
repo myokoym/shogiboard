@@ -16,6 +16,8 @@
           :href  => "./css/shogiboard.css"}
   %body
     %h1 インターネット将棋盤
+    %p -the Shogi board on web-
+    %p ver.0.0.9
     - fu = "./img/fu.gif"
     - kyo = "./img/kyo.gif"
     - kei = "./img/kei.gif"
@@ -56,14 +58,18 @@
                     [nil,kaku,nil,nil,nil,nil,nil,hi,nil],
                     [kyo,kei,gin,kin,gyoku,kin,gin,kei,kyo]]
     %table{:border => '1'}
-      - koma_place.each_with_index do |line, i|
+      - koma_place.each_with_index do |line, y|
         %tr
-          - line.each do |koma|
-            %td
+          - line.each_with_index do |koma, x|
+            - coordinate = (9 - x).to_s + (y + 1).to_s
+            %td{:id => coordinate}
               - if koma
-                - if i < 5
+                - if y < 5
                   %img.you{:src => koma}
                 - else
                   %img.me{:src => koma}
-    %p#bottom ここに色が付けばjQueryのエラーなんてないんだからね！
+    %div#flag.hidden false
+    %div#coordinate.hidden 00
+    %div#before.hidden before
+    %p#bottom_marker ここに色が付けばjQueryのエラーなんてないんだからね！
 

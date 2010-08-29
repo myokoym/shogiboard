@@ -1,15 +1,15 @@
 $(function(){
-  $("h1").css("color","red");
-  $("#bottom").css("color","blue");
-  var $before;
-  var $after;
-  $("td").mousedown(function(){
-    $before = $(this);
+  $("td").click(function(){
+    if($("#flag").text()=="false"){
+      $("#coordinate").html($(this).attr("id"));
+      $("#before").text($(this).html());
+      $("#flag").text("true");
+    }else{
+      $("#"+$("#coordinate").text()).html($(this).html())
+      $(this).html($("#before").text());
+      $("#flag").text("false");
+    }
   });
-  $("td").mouseup(function(){
-    $after = $(this);
-    $(this).replaceWith($before);
-    $before.replaceWith($after);
-  });
+  $("#bottom_marker").css("color","blue");
 });
 
