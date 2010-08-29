@@ -67,11 +67,14 @@
                   %img.you{:src => koma}
                 - else
                   %img.me{:src => koma}
+              - else
+                ="　"
     %div#flag.hidden false
     %div#coordinate.hidden 00
     %div#before.hidden before
-    %p#bottom_marker ここに色が付けばJavaScriptはちゃんと動いてるんだからね！
+    %p#bottom_marker JavaScriptをONにしないと動かないんだからね！
     .footer
+      %br
       Support by M.Yokoyama＜myokoym[@]gmail.com＞
       %br
       Powered by

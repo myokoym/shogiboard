@@ -2,7 +2,8 @@ $(function(){
   $("td").click(function(){
     if($("#flag").text()=="false"){
       $("#coordinate").html($(this).attr("id"));
-      if($(this).html().match("<img.*>")){
+      //if($(this).html().match("<img.*>")){
+      if(true){
         $("#before").text($(this).html());
         $("#flag").text("true");
         $(this).css("background-color", "red");
@@ -15,6 +16,6 @@ $(function(){
       $("#flag").text("false");
     }
   });
-  $("#bottom_marker").css("color","blue");
+  $("#bottom_marker").css("display","none");
 });
 
