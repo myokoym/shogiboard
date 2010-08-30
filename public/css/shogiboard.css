@@ -1,12 +1,28 @@
-td {
+#ban td, #stock td {
   width: 40px;
   height: 44px;  
 }
+
 .italic {
   font-style: italic;
 }
 .hidden {
-  display: none;
+  display: ;
+}
+#ban, #ban td, #stock td {
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+/*
+table#stock {
+  height: 404px;
+}
+*/
+#top {
+  vertical-align: top;
+}
+#bottom {
+  vertical-align: bottom;  
 }
 /*
 .footer {

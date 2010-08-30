@@ -7,8 +7,7 @@
     %meta{'http-equiv' => 'content-script-type', :content => 'text/javascript'}
     %title ブラウザ将棋盤 -the Shogi board on web-
     %script{:type => "text/javascript",
-            :src  => "http://www.google.com/jsapi"}
-    %script{:type => "text/javascript"} google.load("jquery", "1.4.2");
+            :src  => "./js/jquery.js"}
     %script{:type => "text/javascript",
             :src  => "./js/shogiboard.js"}
     %link{:rel => "stylesheet", 
@@ -56,26 +55,35 @@
                     [fu,fu,fu,fu,fu,fu,fu,fu,fu],
                     [nil,kaku,nil,nil,nil,nil,nil,hi,nil],
                     [kyo,kei,gin,kin,gyoku,kin,gin,kei,kyo]]
-    %table{:border => '1'}
-      - koma_place.each_with_index do |line, y|
-        %tr
-          - line.each_with_index do |koma, x|
-            - coordinate = (9 - x).to_s + (y + 1).to_s
-            %td{:id => coordinate}
-              - if koma
-                - if y < 5
-                  %img.you{:src => koma}
-                - else
-                  %img.me{:src => koma}
-              - else
-                ="　"
+    %table#table{:border => "1"}
+      %tr
+        %td
+          %table#ban
+            - koma_place.each_with_index do |line, y|
+              %tr
+                - line.each_with_index do |koma, x|
+                  - coordinate = "_" + (9 - x).to_s + (y + 1).to_s
+                  %td.cell{:id => coordinate}
+                    - if koma
+                      - own = ""
+                      - if y < 5
+                        - own = "you"
+                      - else
+                        - own = "me"
+                      %img{:class => own, :src => koma, :alt => koma.match(/\w+(?=\.)/)}
+                    - else
+                      ="　"
+        %td
+          %table#stock
+            %tr#top
+            %tr#bottom
     %div#flag.hidden false
     %div#coordinate.hidden 00
     %div#before.hidden before
     %p#bottom_marker JavaScriptをONにしないと動かないんだからね！
     .footer
       %br
-      Support by M.Yokoyama＜myokoym[@]gmail.com＞
+      Support by M.Yokoyama&lt;myokoym at gmail.com&gt;
       %br
       Powered by
       %a{:href => "http://www.ruby-lang.org/ja/"} Ruby
