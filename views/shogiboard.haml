@@ -62,7 +62,7 @@
             - koma_place.each_with_index do |line, y|
               %tr
                 - line.each_with_index do |koma, x|
-                  - coordinate = "_" + (9 - x).to_s + (y + 1).to_s
+                  - coordinate = "b" + (9 - x).to_s + (y + 1).to_s
                   %td.cell{:id => coordinate}
                     - if koma
                       - own = ""
