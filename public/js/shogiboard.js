@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("td.cell").click(function(){
     if($("#flag").text()=="false"){
       $("#coordinate").html($(this).attr("id"));
-      if($(this).html().match("<img.*>")){
+      if($(this).html().match("img")){
         $("#before").text($(this).html());
         $("#flag").text("true");
         $(this).css("background-color", "red");
@@ -18,7 +18,7 @@ $(document).ready(function(){
   $("#sakasa").click(function(){
     if($("#flag").text()=="true"){
       $target = $("#"+$("#coordinate").text());
-      if($target.html().match("<img.*>")){
+      if($target.html().match("img")){
         $src = $target.find("img").attr("src");
         if($target.html().match("_invert")){
           $src = $src.replace("_invert", "");
@@ -33,7 +33,7 @@ $(document).ready(function(){
   $("#naru").click(function(){
     if($("#flag").text()=="true"){
       $target = $("#"+$("#coordinate").text());
-      if($target.html().match("<img.*>")){
+      if($target.html().match("img")){
         if($target.html().match("fu|kyo|kei|gin|kaku|hi")){
           $src = $target.find("img").attr("src");
           if($target.html().match("nari_")){
