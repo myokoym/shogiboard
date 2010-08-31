@@ -74,10 +74,16 @@
                     - else
                       ="　"
         %td
-          %table.stock#top
-            %tr#top
-          %table.stock#top
-            %tr#bottom
+          - 2.times do |tbl_i|
+            - if tbl_i == 1
+              %button 逆さ
+              %button 成る              
+            %table.stock
+              - 4.times do |tr_i|
+                %tr
+                  - 4.times do |td_i|
+                    - coordinate = "s" + tbl_i.to_s + tr_i.to_s + td_i.to_s
+                    %td.cell{:id => coordinate}
     %div#flag.hidden false
     %div#coordinate.hidden 00
     %div#before.hidden before

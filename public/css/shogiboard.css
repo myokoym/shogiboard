@@ -1,15 +1,14 @@
-#ban td, #stock td {
+#ban td, .stock td {
   width: 40px;
   height: 44px;  
 }
-
 .italic {
   font-style: italic;
 }
 .hidden {
   display: ;
 }
-#ban, #ban td, #stock td {
+#ban, #ban td, .stock td {
   border: 1px black solid;
   border-collapse: collapse;
 }

@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function(){
   $("td.cell").click(function(){
     if($("#flag").text()=="false"){
       $("#coordinate").html($(this).attr("id"));
@@ -9,18 +9,9 @@ $(function(){
       }
     }else{
       $before = $("#"+$("#coordinate").text());
-      if($(this).attr("id")!=$("#coordinate").text()){
-        if($(this).html().match("<img.*>")){
-          if($("img",this).attr("class")=="me"){
-            $("tr#top").append("<td id=\"cell\">"+$(this).html()+"</td>");
-          }else{
-            $("tr#bottom").append("<td id=\"cell\">"+$(this).html()+"</td>");
-          }
-        }
-        $before.html("　");
-        $(this).html($("#before").text());
-      }
+      $before.html($(this).html());
       $before.css("background-color", "");
+      $(this).html($("#before").text());
       $("#flag").text("false");
     }
   });
