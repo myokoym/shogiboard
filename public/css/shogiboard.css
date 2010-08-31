@@ -6,11 +6,16 @@
   font-style: italic;
 }
 .hidden {
-  display: ;
+  display: none;
 }
-#ban, #ban td, .stock td {
+#ban, #ban td, .stock {
   border: 1px black solid;
   border-collapse: collapse;
+}
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*
 table#stock {

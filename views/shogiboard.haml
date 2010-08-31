@@ -15,7 +15,7 @@
           :href  => "./css/shogiboard.css"}
   %body
     %h1 ブラウザ将棋盤
-    %p.italic -the Shogi board on web-　　ver.0.0.9
+    %p.italic -the Shogi board on web-　　ver.0.1.0
     - fu = "./img/fu.gif"
     - kyo = "./img/kyo.gif"
     - kei = "./img/kei.gif"
@@ -55,7 +55,7 @@
                     [fu,fu,fu,fu,fu,fu,fu,fu,fu],
                     [nil,kaku,nil,nil,nil,nil,nil,hi,nil],
                     [kyo,kei,gin,kin,gyoku,kin,gin,kei,kyo]]
-    %table#table{:border => "1"}
+    %table#table
       %tr
         %td
           %table#ban
@@ -76,8 +76,10 @@
         %td
           - 2.times do |tbl_i|
             - if tbl_i == 1
-              %button 逆さ
-              %button 成る              
+              %div.center
+                %button#sakasa{:type => "button"} 逆さ
+                &nbsp;
+                %button#naru{:type => "button"} 成る
             %table.stock
               - 4.times do |tr_i|
                 %tr
