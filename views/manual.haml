@@ -1,0 +1,50 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
+    %meta{'http-equiv' => 'content-style-type', :content => 'text/css'}
+    %meta{'http-equiv' => 'content-script-type', :content => 'text/javascript'}
+    %title ブラウザ将棋盤 -取扱説明書-
+    %script{:type => "text/javascript",
+            :src  => "./js/jquery.js"}
+    %script{:type => "text/javascript",
+            :src  => "./js/manual.js"}
+    %link{:rel => "stylesheet", 
+          :type => "text/css",
+          :href  => "./css/manual.css"}
+  %body
+    %h2 ブラウザ将棋盤 -取扱説明書-
+    %ul
+      %li 
+        駒をクリックすると背景が
+        %span.red 赤色
+        （選択状態）に変わります。
+      %li 選択状態で他のマスをクリックすると移動します。
+      %li 選択状態で駒台をクリックすると駒台に移動します。
+      %li 選択状態で他の駒をクリックすると入れ替わります。
+      %li 選択状態の駒をクリックすると選択解除します。
+      %li 選択状態で逆さボタンをクリックすると上下の向きが変わります。
+      %li 選択状態で成るボタンをクリックすると成ります。
+      %li 成っている駒を選択して成るボタンをクリックすると成る前に戻ります。
+      %li.none
+        = "- " * 40
+      %li 駒を取る際は、取られる駒を駒台に移動させてから、元の駒を移動させてください。
+      %li 逆さボタンや成るボタンを押しても選択状態が解除されないので、棋譜並べの際は「選択→ボタンを押す→移動」とすると快適です。
+    %p
+      %a{:href => "."} 戻る
+    .footer
+      %br
+      Support by M.Yokoyama&lt;myokoym at gmail.com&gt;
+      %br
+      Powered by
+      %a{:href => "http://www.ruby-lang.org/ja/"} Ruby
+      ,
+      %a{:href => "http://heroku.com/"} Heroku
+      ,
+      %a{:href => "http://www.sinatrarb.com/"} Sinatra
+      ,
+      %a{:href => "http://haml-lang.com/"} Haml
+      ,
+      %a{:href => "http://jquery.com/"} jQuery
+

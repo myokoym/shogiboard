@@ -6,3 +6,7 @@ get "/" do
   haml :shogiboard
 end
 
+get "/manual" do
+  haml :manual
+end
+

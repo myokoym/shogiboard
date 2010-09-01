@@ -1,0 +1,13 @@
+h3 {
+  margin-top: 40px;
+}
+li {
+  margin-bottom: 10px;
+}
+li.none {
+  list-style-type: none;
+}
+.red {
+  color: red;
+}
+
