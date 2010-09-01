@@ -10,3 +10,7 @@ get "/manual" do
   haml :manual
 end
 
+get "/release" do
+  haml :release
+end
+
