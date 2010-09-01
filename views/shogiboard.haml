@@ -15,7 +15,9 @@
           :href  => "./css/shogiboard.css"}
   %body
     %h1 ブラウザ将棋盤
-    %p.italic -the Shogi board on web-　　ver.0.1.1
+    %p.italic
+      = "-the Shogi board on web-　　ver.0.1.1　　　"
+      %a{:href => "./manual"} 取扱説明書
     - fu = "./img/fu.gif"
     - kyo = "./img/kyo.gif"
     - kei = "./img/kei.gif"
@@ -90,8 +92,6 @@
     %div#coordinate.hidden 00
     %div#before.hidden before
     %p#bottom_marker JavaScriptをONにしないと動かないんだからね！
-    %p
-      %a{:href => "./manual"} 取扱説明書
     .footer
       %br
       Support by M.Yokoyama&lt;myokoym at gmail.com&gt;

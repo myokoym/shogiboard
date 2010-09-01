@@ -23,10 +23,15 @@
 #bottom {
   vertical-align: bottom;  
 }
-.right {
-  margin-left: auto;
-  margin-right: 0;
+/*
+.left {
+  text-align: left;
+  float: left;
 }
+.right {
+  text-align: right;
+}
+*/
 /*
 .footer {
   background-color: gray;
