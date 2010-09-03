@@ -40,8 +40,6 @@ $(document).ready(function(){
       $("#kifu_flag").text("true");
       $("#kifu_flag_button").text("採譜○");      
     }
-    var $tmp_text = $("#kifu").text().replace(/\n.*\n$/, "\n");
-    $("#kifu").text($tmp_text);
   });  
   $("#sakasa").click(function(){
     if($("#flag").text()=="true"){
