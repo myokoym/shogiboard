@@ -42,7 +42,7 @@ $(document).ready(function(){
     }
   });  
   $("#sakasa").click(function(){
-    if($("#flag").text()=="true"){
+    if($("#have_flag").text() == "true"){
       var $target = $("#"+$("#coordinate").text());
       if($target.html().match("img")){
         var $src = $target.find("img").attr("src");
@@ -57,7 +57,7 @@ $(document).ready(function(){
     }
   });
   $("#naru").click(function(){
-    if($("#flag").text()=="true"){
+    if($("#have_flag").text() == "true"){
       var $target = $("#"+$("#coordinate").text());
       if($target.html().match("img")){
         if($target.html().match("fu|kyo|kei|gin|kaku|hi")){
