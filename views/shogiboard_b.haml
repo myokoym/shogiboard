@@ -1,0 +1,115 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
+    %meta{'http-equiv' => 'content-style-type', :content => 'text/css'}
+    %meta{'http-equiv' => 'content-script-type', :content => 'text/javascript'}
+    %title ブラウザ将棋盤 -the Shogi board on web-
+    %script{:type => "text/javascript",
+            :src  => "./js/jquery.js"}
+    %script{:type => "text/javascript",
+            :src  => "./js/shogiboard_b.js"}
+    %link{:rel => "stylesheet", 
+          :type => "text/css",
+          :href  => "./css/shogiboard_b.css"}
+  %body
+    %h1 ブラウザ将棋盤
+    %p.italic
+      = "-the Shogi board on web-　　ver.0.1.1　　　"
+      %a{:href => "./manual"} 取扱説明書
+    - fu = "./img/fu.gif"
+    - kyo = "./img/kyo.gif"
+    - kei = "./img/kei.gif"
+    - gin = "./img/gin.gif"
+    - kin = "./img/kin.gif"
+    - kaku = "./img/kaku.gif"
+    - hi = "./img/hi.gif"
+    - gyoku = "./img/gyoku.gif"
+    - ou = "./img/ou.gif"
+    - to = "./img/nari_fu.gif"
+    - narikyo = "./img/nari_kyo.gif"
+    - narikei = "./img/nari_kei.gif"
+    - narigin = "./img/nair_gin.gif"
+    - uma = "./img/nari_kaku.gif"
+    - ryu = "./img/nari_hi.gif"
+    - fu_y = "./img/fu_invert.gif"
+    - kyo_y = "./img/kyo_invert.gif"
+    - kei_y = "./img/kei_invert.gif"
+    - gin_y = "./img/gin_invert.gif"
+    - kin_y = "./img/kin_invert.gif"
+    - kaku_y = "./img/kaku_invert.gif"
+    - hi_y = "./img/hi_invert.gif"
+    - gyoku_y = "./img/gyoku_invert.gif"
+    - ou_y = "./img/ou_invert.gif"
+    - to_y = "./img/nari_fu_invert.gif"
+    - narikyo_y = "./img/nari_kyo_invert.gif"
+    - narikei_y = "./img/nari_kei_invert.gif"
+    - narigin_y = "./img/nair_gin_invert.gif"
+    - uma_y = "./img/nari_kaku_invert.gif"
+    - ryu_y = "./img/nari_hi_invert.gif"
+    - koma_place = [[kyo_y,kei_y,gin_y,kin_y,gyoku_y,kin_y,gin_y,kei_y,kyo_y],
+                    [nil,hi_y,nil,nil,nil,nil,nil,kaku_y,nil],                                
+                    [fu_y,fu_y,fu_y,fu_y,fu_y,fu_y,fu_y,fu_y,fu_y],
+                    [nil,nil,nil,nil,nil,nil,nil,nil,nil],
+                    [nil,nil,nil,nil,nil,nil,nil,nil,nil],
+                    [nil,nil,nil,nil,nil,nil,nil,nil,nil],
+                    [fu,fu,fu,fu,fu,fu,fu,fu,fu],
+                    [nil,kaku,nil,nil,nil,nil,nil,hi,nil],
+                    [kyo,kei,gin,kin,gyoku,kin,gin,kei,kyo]]
+    %table#table
+      %tr
+        %td
+          %table#ban
+            - koma_place.each_with_index do |line, y|
+              %tr
+                - line.each_with_index do |koma, x|
+                  - coordinate = "b" + (9 - x).to_s + (y + 1).to_s
+                  %td.cell{:id => coordinate}
+                    - if koma
+                      - own = ""
+                      - if y < 5
+                        - own = "you"
+                      - else
+                        - own = "me"
+                      %img{:class => own, :src => koma, :alt => "駒"}
+                    - else
+                      ="　"
+        %td
+          - 2.times do |tbl_i|
+            - if tbl_i == 1
+              %div.center
+                %button#sakasa{:type => "button"} 逆さ
+                &nbsp;
+                %button#naru{:type => "button"} 成る
+            %table.stock
+              - 4.times do |tr_i|
+                %tr
+                  - 4.times do |td_i|
+                    - coordinate = "s" + tbl_i.to_s + tr_i.to_s + td_i.to_s
+                    %td.cell{:id => coordinate}
+        %td
+          %textarea#kifu{:rows => 20, :readonly => "readonly"}
+          %br
+          %button#kifu_flag_button 採譜○
+          %button#matta 一手戻す
+    %div#have_flag.hidden false
+    %div#coordinate.hidden 00
+    %div#before.hidden before
+    %div#kifu_flag.hidden true
+    %p#bottom_marker JavaScriptをONにしないと動かないんだからね！
+    .footer
+      %br
+      Support by M.Yokoyama&lt;myokoym at gmail.com&gt;
+      %br
+      Powered by
+      %a{:href => "http://www.ruby-lang.org/ja/"} Ruby
+      ,
+      %a{:href => "http://heroku.com/"} Heroku
+      ,
+      %a{:href => "http://www.sinatrarb.com/"} Sinatra
+      ,
+      %a{:href => "http://haml-lang.com/"} Haml
+      ,
+      %a{:href => "http://jquery.com/"} jQuery
+

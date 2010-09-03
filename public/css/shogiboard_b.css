@@ -1,0 +1,41 @@
+#ban td, .stock td {
+  width: 40px;
+  height: 44px;  
+}
+.italic {
+  font-style: italic;
+}
+.hidden {
+  display: none;
+}
+#ban, #ban td, .stock {
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#top {
+  vertical-align: top;
+}
+#bottom {
+  vertical-align: bottom;  
+}
+/*
+.left {
+  text-align: left;
+  float: left;
+}
+.right {
+  text-align: right;
+}
+*/
+/*
+.footer {
+  background-color: gray;
+  color: white;
+}
+*/
+
