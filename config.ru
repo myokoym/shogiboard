@@ -1,4 +1,4 @@
-require 'shogiboard'
+require './shogiboard'
 
 run Sinatra::Application
 
